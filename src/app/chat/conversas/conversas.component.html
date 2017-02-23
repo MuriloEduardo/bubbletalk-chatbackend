@@ -1,0 +1,36 @@
+<div class="section">
+	<div id="conversas" class="white z-depth-2">
+		<div class="row">
+			<div class="listagem-conversas col s4">
+				<nav>
+					<!-- Dropdown Structure -->
+					<ul id="dropdown1" class="dropdown-content">
+						<li><a>one</a></li>
+						<li><a>two</a></li>
+						<li class="divider"></li>
+						<li><a>three</a></li>
+					</ul>
+					<div class="nav-wrapper">
+						<ul class="right hide-on-med-and-down">
+							<li><a materialize="dropdown" class="dropdown-button" href="#" data-activates="dropdown1"><i class="material-icons">more_vert</i></a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="search-conversas"></div>
+				<div class="conversa"></div>
+			</div>
+			<div class="col s8">
+				{{ dadosSocket.id }}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- {{ dadosSocket.id }}
+<div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div *ngFor="let message of messages">
+		  {{message.text}}
+		</div>
+		<input [(ngModel)]="message"  /><button (click)="sendMessage()">Send</button>	
+	</div>
+</div> -->

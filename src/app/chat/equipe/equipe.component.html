@@ -1,0 +1,115 @@
+<!-- <div class="mdl-grid">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div *ngIf="toggleClick" class="full-card-wide mdl-card mdl-shadow--2dp">
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">Monte Sua Equipe</h2>
+			</div>
+			<div class="mdl-grid mdl-card__actions mdl-card--border">
+				<form (submit)="addChat($event)">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="id-chat" [(ngModel)]="appname" name="appname" autofocus>
+						<label class="mdl-textfield__label" for="id-chat">Nome do novo agente</label>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<input class="mdl-textfield__input" type="text" id="id-chat" [(ngModel)]="appname" name="appname" require>
+						<label class="mdl-textfield__label" for="id-chat">Email do novo agente</label>
+					</div>
+					<div>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="reset">
+			            	Descartar
+			            </button>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" type="submit">
+							Adicionar Agente
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" (click)="toggleClick = !toggleClick">
+	<div *ngIf="!toggleClick">
+		<i class="material-icons" role="presentation">&#xE145;</i>
+		<span class="visuallyhidden">Criar</span>
+	</div>
+	<div *ngIf="toggleClick">
+		<i class="material-icons" role="presentation">&#xE5CD;</i>
+		<span class="visuallyhidden">Fechar</span>
+	</div>
+</button> -->
+<div class="row">
+	<div class="col s10 offset-s1">
+		<div class="section">
+			<nav id="search-chats" class="teal">
+				<div class="nav-wrapper">
+					<div class="row">
+						<div class="col s6">
+							<form>
+								<div class="input-field">
+									<input id="search" type="search" placeholder="Pesquisar integrantes por" />
+									<label for="search"><i class="material-icons">search</i></label>
+								</div>
+							</form>
+						</div>
+						<div class="col s6">
+							<ul class="right">
+								<li>
+									<!-- Modal Trigger -->
+									<a class="modal-trigger waves-effect waves-light modal-trigger btn light-blue darken-2" (click)="openModal()">Adicionar um Novo Integrante <i class="material-icons right">&#xE145;</i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div id="modal-equipe" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+				<form (submit)="addUser($event)">
+					<div class="modal-content">
+						<h4>Adicione um novo integrante a equipe</h4>
+						<p>Não faça tudo sozinho</p>
+						<div class="row">
+							<div class="col s12">
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="user_name" type="text" [(ngModel)]="nome" name="nome" class="validate" autofocus>
+										<label for="user_name">Nome</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+										<input id="user_email" type="email" [(ngModel)]="email" name="email" class="validate" required>
+										<label for="user_email">E-mail</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="waves-effect btn">Adicionar</button>
+						<button class="waves-effect btn grey lighten-4 black-text" (click)="closeModal()">Cancelar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="divider"></div>
+		<div class="section">
+			<div class="row">
+				<div class="col s4" *ngFor="let user of users">
+					<div class="card">
+						<div class="card-image waves-effect waves-block waves-light">
+							<img class="activator" src="http://materializecss.com/images/sample-1.jpg">
+						</div>
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">{{ user.nome }}<i class="material-icons right">more_vert</i></span>
+							<p><a href="#">This is a link</a></p>
+						</div>
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							<p>Here is some more information about this product that is only revealed once clicked on.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

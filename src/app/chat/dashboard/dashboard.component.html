@@ -1,0 +1,16 @@
+<div class="section">
+	<div class="row">
+		<div class="col s10 offset-s1">
+			<div class="card card-section">
+				<div class="card-header grey lighten-4">
+					<div class="card-title">Painel de Controle</div>
+				</div>
+				<div class="card-content">
+					<h3>{{ chat?.dados.appname }} <div class="icone-online"></div></h3>
+					<h6>ID do Chat: <strong>{{ chat?._id }}</strong></h6>
+					<h6>Criado em: <strong>{{chat?.dados.data_cadastro | date: 'fullDate'}}</strong></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

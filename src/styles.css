@@ -1,0 +1,58 @@
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	width: 100%!important;
+}
+main { flex: 1 0 auto; }
+.card-header { border-bottom: 1px solid #e5e5e5; }
+.right-btn { text-align: right; }
+#first-load-body {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+.icone-online {
+	border-radius: 5px;
+	display: inline-block;
+	height: 10px;
+	line-height: 12px;
+	padding: 0;
+	width: 10px;
+	background-color: #42b72a;
+	margin-left: 5px;
+}
+.card .card-title {
+	font-weight: initial;
+}
+.card-section {
+	margin: 15px auto;
+}
+.card-section .card-title {
+	padding: 15px;
+}
+.modal .modal-footer .btn {
+	margin-left: 5px;
+}
+#search-chats {
+	margin: 15px auto;
+}
+input[type="search"] {
+	height: 64px !important;
+	margin-bottom: 0!important;
+}
+.input-field input[type=search]:focus {
+	background-color: transparent;
+	color: #fff;
+}
+.input-field input[type=search]:focus + label i {
+	color: #fff;
+}
+.input-field label:not(.label-icon).active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+::-webkit-input-placeholder { color: #fff; }
+:-moz-placeholder { color: #fff; }
+::-moz-placeholder { color: #fff; }
+:-ms-input-placeholder { color: #fff; }

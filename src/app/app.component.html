@@ -1,0 +1,6 @@
+<header navbar *ngIf="mostrarMenu" [class.wrapper]="mostrarDrawer"></header>
+<main [class.wrapper]="mostrarDrawer">
+	<router-outlet></router-outlet>
+</main>
+<footer *ngIf="!mostrarDrawer&&mostrarMenu" class="page-footer grey darken-3"></footer>
+<sidebar *ngIf="mostrarDrawer"></sidebar>

@@ -1,0 +1,48 @@
+<!-- <header *ngIf="chat" class="drawer-header">
+  <div class="drawer-avatar-dropdown">
+    <img src="../../assets/user.jpg" class="drawer-avatar">
+    <span>{{ chat?.dados.appname }}</span>
+    <div class="mdl-layout-spacer"></div>
+    <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+      <i class="material-icons" role="presentation">&#xE5D4;</i>
+      <span class="visuallyhidden">Accounts</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+      <li class="mdl-menu__item">hello@example.com</li>
+      <li class="mdl-menu__item">info@example.com</li>
+      <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+    </ul>
+  </div>
+</header>
+<nav class="mdl-navigation">
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id]" href="">Painel</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'conversas']" href="">Conversas</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'equipe']" href="">Equipe</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'layout']" href="">Layout</a>
+  <a class="mdl-navigation__link" routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']" href="">Configurações</a>
+</nav> -->
+
+<!-- <header *ngIf="chat">
+      <nav class="top-nav">
+        <div class="nav-wrapper">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
+        </div>
+      </nav>
+      <ul style="width:120px; margin-top:65px;" class="side-nav fixed">
+        <li><a routerLinkActive="active" [routerLink]="[chat?._id]" href="">Painel</a></li>
+        <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'conversas']" href="">Conversas</a></li>
+        <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'equipe']" href="">Equipe</a></li>
+        <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'layout']" href="">Layout</a></li>
+        <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']" href="">Configurações</a></li>
+      </ul>      
+</header> -->
+<ul id="slide-out" class="side-nav fixed teal z-depth-2">
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id]">Painel</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'conversas']">Conversas</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'equipe']">Equipe</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'layout']">Layout</a></li>
+  <li><a routerLinkActive="active" [routerLink]="[chat?._id, 'configuracao']">Configurações</a></li>
+</ul>

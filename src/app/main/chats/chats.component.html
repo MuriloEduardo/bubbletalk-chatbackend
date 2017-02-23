@@ -1,0 +1,108 @@
+<div class="container">
+	<div class="section">
+	<nav id="search-chats" class="teal">
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s6">
+					<form>
+						<div class="input-field">
+							<input id="search" type="search" placeholder="Pesquisar chats por" />
+							<label for="search"><i class="material-icons">search</i></label>
+						</div>
+					</form>
+				</div>
+				<div class="col s6">
+					<ul class="right">
+						<li>
+							<!-- Modal Trigger -->
+							<a class="modal-trigger waves-effect waves-light modal-trigger btn light-blue darken-2" (click)="openModal()">Adicionar um Novo Chat <i class="material-icons right">&#xE145;</i></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	</div>
+	<div class="divider"></div>
+	<div class="section">
+		<div class="row">
+			<div *ngFor="let chat of chats" class="col s4" [routerLink]="[chat._id]">
+				<div class="card hoverable horizontal">
+					<div class="card-image">
+						<img src="http://materializecss.com/images/sample-1.jpg" [attr.alt]="chat.dados.appname" [attr.title]="chat.dados.appname" height="80px" width="80px">
+					</div>
+					<div class="card-stacked">
+						<div class="card-content">
+							<h5 class="truncate">
+								<span><strong>{{ chat.dados.appname }}</strong></span>
+								<div class="icone-online"></div>
+							</h5>
+							<h6 class="truncate"><small>ID do Chat:</small><br><span>{{ chat._id }}</span></h6>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="modal-chats" class="modal modal-fixed-footer" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+		<form (submit)="addChat($event)">
+			<div class="modal-content">
+				<h4>Crie um novo chat</h4>
+				<p>Começe dando um nome a ele</p>
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="chat_name" type="text" [(ngModel)]="appname" name="appname" class="validate" autofocus required>
+								<label for="chat_name">Nome de Exibição</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="chat_email" type="email" [(ngModel)]="email" name="email" class="validate">
+								<label for="chat_email">E-mail para Contato</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<select materialize="material_select" [(ngModel)]="categoria" name="categoria">
+									<option value="" disabled selected>Escolha uma categoria</option>
+									<option value="Clima">Clima</option>
+									<option value="Comida e Bebida">Comida e Bebida</option>
+									<option value="Compras">Compras</option>
+									<option value="Comunicação">Comunicação</option>
+									<option value="Diversão">Diversão</option>
+									<option value="Educação">Educação</option>
+									<option value="Esportes">Esportes</option>
+									<option value="Estilo de vida">Estilo de vida</option>
+									<option value="Finanças">Finanças</option>
+									<option value="Foto">Foto</option>
+									<option value="Jogos">Jogos</option>
+									<option value="Livros">Livros</option>
+									<option value="Local">Local</option>
+									<option value="Moda">Moda</option>
+									<option value="Música">Música</option>
+									<option value="Navegação">Navegação</option>
+									<option value="Negócios">Negócios</option>
+									<option value="Notícias">Notícias</option>
+									<option value="Produtividade">Produtividade</option>
+									<option value="Promoções e Concursos">Promoções e Concursos</option>
+									<option value="Referência">Referência</option>
+									<option value="Saúde e boa forma">Saúde e boa forma</option>
+									<option value="Utilitários">Utilitários</option>
+									<option value="Viagens">Viagens</option>
+									<option value="Vídeos">Vídeos</option>
+								</select>
+								<label>Categoria do Site</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="waves-effect btn">Criar</button>
+				<button class="waves-effect btn grey lighten-4 black-text" (click)="closeModal()">Cancelar</button>
+			</div>
+		</form>
+	</div>
+</div>
